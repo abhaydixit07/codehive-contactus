@@ -1,10 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
 const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+app.use(cors());
 app.use(express.json());
+
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com', // The email service's SMTP server
